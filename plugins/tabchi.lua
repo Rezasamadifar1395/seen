@@ -1,12 +1,6 @@
-local gps2 = redis:scard("selfbot:groups")
-local sgps2 = redis:scard("selfbot:supergroups")
-local users2 = redis:scard("selfbot:users")
-local pvmsgs = redis:get("pv:msgs")
-local gpmsgs = redis:get("gp:msgs")
-local sgpmsgs = redis:get("supergp:msgs")
-local links =  redis:smembers("selfbot:links")
 
-,ocal function parsed_url(link)
+
+local function parsed_url(link)
   local parsed_link = URL.parse(link)
   local parsed_path = URL.parse_path(parsed_link.path)
   return parsed_path[2]
